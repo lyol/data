@@ -2,7 +2,7 @@ spring:
   datasource:
     credit:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbc-url: jdbc:mysql://sh-cdb-0auhvizu.sql.tencentcdb.com:62736/loan_test?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+      jdbc-url: jdbc:mysql://sh-cdb-0auhvizu.sql.tencentcdb.com:62736/crm_test?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
       username: root
       password: db!N70ES65#ac
  # hibernate
