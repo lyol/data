@@ -8,6 +8,7 @@ import javax.persistence.PersistenceContext;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.criterion.DetachedCriteria;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
@@ -66,7 +67,8 @@ public class SysMenuDao extends AbstractDao {
 		return this.saveOrUpdate(sysMenu);
 	}
 
-	public List<SysMenusVO> listInitMenus(Integer type, String userNmae, String pid) {
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public List<SysMenusVO> listInitMenus(Integer type, String pid, String userNmae) {
 		String sql = "SELECT\r\n" + 
 				"        csm.id,\r\n" + 
 				"        csm.pid,\r\n" + 
@@ -89,7 +91,7 @@ public class SysMenuDao extends AbstractDao {
 				(StringUtils.isNoneBlank(pid)?  ("AND csm.pid = '" + pid + "'"):"")+
 				"    ORDER BY\r\n" + 
 				"        csm.sort ASC";
-		List<SysMenusVO> list = jdbcTemplate.queryForList(sql, SysMenusVO.class);
+		List<SysMenusVO> list = jdbcTemplate.query(sql, new BeanPropertyRowMapper(SysMenusVO.class));
 		return list;
 	}
 

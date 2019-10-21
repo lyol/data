@@ -101,7 +101,6 @@ public class MenusServiceImpl implements MenusService {
 
     @Override
     public Result listInitMenus(String userName) {
-    	System.err.println("userName:************"+userName);
         List<SysMenusVO> menus = sysMenuDao.listInitMenus(MenuTypeEnum.DIRECTORY.getCode(),null,userName);
         for (SysMenusVO sysMenusVO : menus) {
             if (sysMenusVO.getChildrens() == true) {
