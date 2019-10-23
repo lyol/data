@@ -2,8 +2,8 @@ package com.example.enums;
 
 /**
  * 自定义响应码
- * @author zhangzhuo
- * @date 2017年4月24日
+ * @author liyongli
+ * @date 2019年9月20日
  */
 public enum ResultEnum {
 

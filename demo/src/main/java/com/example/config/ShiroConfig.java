@@ -25,7 +25,7 @@ import org.springframework.context.annotation.DependsOn;
 import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 /**
  * Shiro配置文件
- * @author zhangzhuo
+ * @author liyongli
  *
  */
 @Configuration
@@ -55,7 +55,6 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
         LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         filterChainDefinitionMap.put("/css/**", "anon");
-        filterChainDefinitionMap.put("/data/**", "anon");
         filterChainDefinitionMap.put("/images/**", "anon");
         filterChainDefinitionMap.put("/js/**", "anon");
         filterChainDefinitionMap.put("/larry/**", "anon");
@@ -63,11 +62,9 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/lib/**", "anon");
         filterChainDefinitionMap.put("/mods/**", "anon");
         filterChainDefinitionMap.put("/plus/**", "anon");
-        filterChainDefinitionMap.put("/thirdlib/**", "anon");
         filterChainDefinitionMap.put("/configure.js", "anon");
         filterChainDefinitionMap.put("/logout", "logout");
         filterChainDefinitionMap.put("/login", "anon");
-        filterChainDefinitionMap.put("/api/**", "anon");
         //因为这里开启了rememberMe，所以要用user,authc是必须认证（执行实际的登陆操作）
        /* filterChainDefinitionMap.put("/**", "authc");*/
         filterChainDefinitionMap.put("/**", "user");  

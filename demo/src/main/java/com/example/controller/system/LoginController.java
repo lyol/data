@@ -42,10 +42,4 @@ public class LoginController extends BaseController{
         }
         return Result.ok();
     }
-
-/*    @GetMapping("/logout")
-    public String logoutUser() {
-        logout();
-        return "redirect:/login";
-    }*/
 }

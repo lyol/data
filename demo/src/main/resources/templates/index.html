@@ -151,8 +151,8 @@
     </div>
     <!-- 底部固定区域 -->
     <div class="layui-footer larryms-footer" data-show='on' id="larry_footer">
-         <p class="block">Copyright ©2019 爱投金融 All Rights Reserved.</p>
-         <div class="larryms-info inline-block pos-ar">当前版本：20191015<a href="http://www.5aitou.com/" target="_blank"></a></div>
+         <p class="block">Copyright ©2019 All Rights Reserved.</p>
+         <div class="larryms-info inline-block pos-ar">当前版本：20191015<a href="http://www.lyongl.cn/" target="_blank"></a></div>
     </div>
 </div>
 <div class="layui-hide fa"></div>
@@ -162,8 +162,9 @@
 <div class="site-mobile-shade"></div>
 <!-- 加载js文件-->
 <script type="text/javascript" src="/layui/layui.js"></script>
-<!-- <script th:src="${urls.getForLookupPath('/mods/admin/index.js')}"></script> -->
 <script type="text/javascript">
+// 默认首页
+layui.cache.homeUrl = 'home/home';
 layui.cache.page = 'index'; 
 //说明：并非一个页面只能加载一个模块 可以这样定义：'index,common';也并非每个页面都要定义一个模块，事实上模块根据功能需要可以公用
 //layui.cache.rightMenu = 'custom'; //默认开启页面右键菜单，设置为 custom 时需要自定义右键菜单，设置为false 关闭右键菜单
