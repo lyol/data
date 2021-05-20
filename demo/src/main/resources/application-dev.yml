@@ -2,15 +2,21 @@ spring:
   datasource:
     credit:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      jdbc-url: jdbc:mysql://sh-cdb-0auhvizu.sql.tencentcdb.com:62736/crm_test?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+      jdbc-url: jdbc:mysql://localhost:3306/crm_test?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
       username: root
-      password: db!N70ES65#ac
+      password: root
  # hibernate
-  jpa:    database: mysql
+  jpa:
+    database: mysql
     show-sql: true
     format-sql: true
-    hibernate:      naming:
-        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy      ddl-auto: validate    properties:      hibernate:
+    hibernate:
+      naming:
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+      ddl-auto: validate
+    properties:
+      hibernate:
           dialect: org.hibernate.dialect.MySQL5Dialect
 server:
   port: 8080
